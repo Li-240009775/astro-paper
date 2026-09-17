@@ -1,0 +1,31 @@
+image: node:22-alpine
+
+stages:
+  - build
+  - deploy
+
+build:
+  stage: build
+  script:
+    - corepack enable
+    - corepack prepare pnpm@11.3.0 --activate
+    - pnpm install --frozen-lockfile
+    - pnpm run build
+  artifacts:
+    paths:
+      - dist/
+    expire_in: 1 week
+
+pages:
+  stage: deploy
+  dependencies:
+    - build
+  script:
+    - mkdir -p public
+    - cp -r dist/. public/
+  artifacts:
+    paths:
+      - public/
+    expire_in: 1 day
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
