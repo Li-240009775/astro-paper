@@ -3,8 +3,7 @@ import { defineAstroPaperConfig } from "./src/types/config";
 // TODO: 请根据你的真实信息替换以下占位内容
 export default defineAstroPaperConfig({
   site: {
-    // 请替换为你的最终站点地址(例如 SJTU GitLab Pages 生成的 URL)
-    url: "https://wuzn001.pages.sjtu.edu.cn/",
+    url: "https://Li-240009775.github.io/astro-paper/",
     title: "李培轩的个人主页",
     description: "这里是李培轩的个人主页,记录学习、生活与思考。",
     author: "李培轩",
@@ -26,7 +25,7 @@ export default defineAstroPaperConfig({
     showBackButton: true,
     editPost: {
       enabled: true,
-      url: "https://git.sjtu.edu.cn/wuzn001/astro-paper/-/edit/main/",
+      url: "https://github.com/Li-240009775/astro-paper/edit/main/",
     },
     search: "pagefind",
   },
