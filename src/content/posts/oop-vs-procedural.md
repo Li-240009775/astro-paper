@@ -1,5 +1,5 @@
 ---
-title: "我感觉我初步认识到了oop和过程化编程的区别"
+title: "初始oop和过程化编程的区别"
 pubDatetime: 2026-11-20T16:00:00+08:00
 description: "记录一个理解"
 tags: ["C++", "学习笔记"]
