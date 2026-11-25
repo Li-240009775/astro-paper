@@ -38,8 +38,8 @@ int main(){
     int& nonnegC_=nonnegC;
     int* negative=NULL;
     int* nonnegative=NULL;
-    int* p1=&negative;
-    int* p2=&nonnegative;
+    int** p1=&negative;
+    int** p2=&nonnegative;
     splitBySign(a,n,p1,negC_,p2,nonnegC)
     cout<<negC<<' '<<nonnegC<<endl;
     cout<<negative<<endl;
@@ -79,7 +79,7 @@ int **nonnegative, int &nonnegativeCount){
 ```
 
 ## 结构问题
-main()：引入p1,p2是没有必要的，还是二级指针容易把自己绕晕，直接把&(non)negtive传入函数就行，然后也不用专门建negC_来引用neg，直接将neg传入
+main()：引入p1,p2是没有必要的，还是二级指针容易把自己绕晕，直接把 &(non)negtive 传入函数就行，然后也不用专门建negC_来引用neg，直接将neg传入
 函数，编译器会自动让形参 negativeCount 成为实参 negC 的别名，我这样反而多此一举。
 
 ##最终代码
@@ -176,5 +176,6 @@ void splitBySign(const int *a, int n, int **negative, int &negativeCount,
 ```
 
 ## 总结
+整道题的思路就是创建两个空指针，把空指针的地址传入函数，函数通过改这个地址存的地址让这个指针指向新建的数组，negative（main函数里的）那块内存存的是新分配的内存的那块地址。
 还是细节问题居多，有些是没记住有些是忘记了，然后没有完全get到题目到底要我怎么做，说明我基本的思想没有完全消化理解，希望这次能
 让我对指针的掌握跟进一步。
